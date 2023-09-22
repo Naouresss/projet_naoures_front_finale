@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+   
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+
+  
+    <link href="/assets/css/style.css" rel="stylesheet">-->
+</head>
+
+<body>
+    <!-- Spinner Start -->
+ 
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    
+        <app-header></app-header>
+      <!-- Navbar & Hero End -->
+  
+   
+    <!-- Navbar & Hero End -->
+
+ 
+    <!-- About Start -->
+
+
+<!-- About End -->
+
+
+<!-- Service Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+      <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+        <h1 class="section-title bg-white text-center text-primary px-3">Je consulte le Bilan GES</h1>
+      </div>
+      <div class="row g-0">
+        <div class="service-item rounded pt-3 resizable-element ">
+            <button (click)="goToConsulter()">
+                <h5>1</h5>
+                <p>Fiche identité</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element ">
+            <button (click)="goToTableauDeclaration()">
+                <h5>2</h5>
+                <p>Tableau de déclaration</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element">
+            <button (click)="goToInformations()">
+                <h5>3</h5>
+                <p>Informations complémentaires</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element">
+            <button (click)="goToPlans()">
+                <h5>4</h5>
+                <p>Plan de transition</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element">
+            <button (click)="goToPresentation()">
+                <h5>5</h5>
+                <p>Présentation de l'organisation</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element actif">
+            <button (click)="goToMethodologie()">
+                <h5>6</h5>
+                <p>Méthodologie</p>
+            </button>
+        </div>&nbsp;
+        
+        <div class="service-item rounded pt-3 resizable-element">
+            
+                <h5>7</h5>
+                <p>Coordonnées responsable</p>
+            
+        </div>
+        
+    </div>
+    </div>
+  </div>
+  <hr>
+<!-- Service End -->
+<!-- ... Autres parties du template ... -->
+
+<!-- Tableau de déclaration Start -->
+<h1 class="section-title bg-white text-center text-primary px-3">Méthodologie</h1>
+<div class="labels-container">
+    <div class="label-item" [class.active]="activeTab === 'calcul'" (click)="setActiveTab('calcul')">Calcul des émissions
+        
+    </div>
+    <div class="label-item" [class.active]="activeTab === 'liste'" (click)="setActiveTab('liste')">Liste des facteurs d’émission (FE) et Pouvoir de Réchauffement Global (PRG) utilisés
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'incertitude'" (click)="setActiveTab('incertitude')">Incertitudes
+        
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'source'" (click)="setActiveTab('source')">Sources
+        
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'siret'" (click)="setActiveTab('siret')">Siret
+        
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'comparaison'" (click)="setActiveTab('comparaison')">Comparaison avec le précédent bilan
+        
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'recalcul'" (click)="setActiveTab('recalcul')">Recalcul
+        
+        </div>
+        <div class="label-item" [class.active]="activeTab === 'rapprot'" (click)="setActiveTab('rapport')">Rapport complet du BGES
+        
+        </div>
+</div>
+
+<div class="main-container">
+    <div class="content-container">
+        <!-- Contenu de Synthèse -->
+       <div *ngIf= "activeTab === 'calcul'">
+            <!-- Ajoutez ici le contenu de Synthèse -->
+          
+           <h1>Bilan carbone</h1>
+           <p>La méthodologie Bilan carbone a été utilisé. Les 3 Scops ont été analysés pour un bilan complet. </p>
+
+</div>
+     
+       <div *ngIf= "activeTab === 'liste'">  
+        <!-- Contenu de Tableaux -->
+       
+            
+          <p>Pas de FE et PRG utilisés indiqués.</p>
+
+
+        </div>
+        
+       <div *ngIf= "activeTab === 'incertitude'">  
+        <!-- Contenu de Tableaux -->
+       <h1>incertitude</h1>
+            
+          <p>30%</p>
+
+
+        </div>
+        <div *ngIf= "activeTab === 'source'">  
+            <!-- Contenu de Tableaux -->
+        
+                
+              <p>Pas de sources indiquées.</p>
+    
+    
+            </div>
+            <div *ngIf= "activeTab === 'siret'">  
+                <!-- Contenu de Tableaux -->
+            
+                    
+                  <p>Pas de Siret indiqué.</p>
+        
+        
+                </div>
+                <div *ngIf= "activeTab === 'comparaison'">  
+                    <!-- Contenu de Tableaux -->
+                
+                        
+                      <p>Pas de comparaison avec le précédent bilan indiquée.</p>
+            
+            
+                    </div>
+                    <div *ngIf= "activeTab === 'recalcul'">  
+                        <!-- Contenu de Tableaux -->
+                    
+                            
+                          <p>Pas de recalcul indiqué.</p>
+                
+                
+                        </div>
+                        <div *ngIf= "activeTab === 'rapport'">  
+                            <!-- Contenu de Tableaux -->
+                        
+                                
+                              <p>Pas de lien URL vers le rapport complet du BEGES indiqué, ni de rapport au format PDF.</p>
+                    
+                    
+                            </div>
+        
+    </div>
+</div>
+
+<!-- Tableau de déclaration End -->
+
+<!-- ... Autres parties du template ... -->
+
+  
+  
+<!-- Destination Start -->
+
+<!-- Destination Start -->
+
+
+<!-- Package Start -->
+
+<!-- Package End -->
+
+
+<!-- Booking Start -->
+
+<!-- Booking Start -->
+
+
+<!-- Process Start -->
+
+<!-- Process Start -->
+
+
+<!-- Team Start -->
+
+<!-- Team End -->
+
+
+<!-- Testimonial Start -->
+
+<!-- Testimonial End -->
+
+
+<!-- Footer Start -->
+<app-footer></app-footer>
+<!-- Footer End -->
+
+
+<!-- Back to Top -->
+<a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+<!-- JavaScript Libraries -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="/assets/lib/wow/wow.min.js"></script>
+<script src="/assets/lib/easing/easing.min.js"></script>
+<script src="/assets/lib/waypoints/waypoints.min.js"></script>
+<script src="/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="/assets/lib/tempusdominus/js/moment.min.js"></script>
+<script src="/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+<script src="/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<!-- Template Javascript -->
+<script src="/assets/js/main.js"></script>
+</body>
+
+</html>

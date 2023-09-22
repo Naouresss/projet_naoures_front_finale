@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tourist - Travel Agency HTML Template</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="/assets/img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="/assets/lib/animate/animate.min.css" rel="stylesheet">
+    <link href="/assets/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="/assets/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <link href="/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+ 
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                   
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar & Hero Start -->
+    <app-header></app-header>
+    <!-- About Start -->
+
+
+    <!-- About End -->
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
+                <h1 class="section-title bg-white text-center text-primary px-3">Bilans</h1>
+            </div>
+            <div>
+                <button type="button" class="btn btn-secondary">Télecharger Tous Les Bilans</button>
+            </div>
+            &nbsp;
+            <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+                <div class="mb-3">
+                    
+                    <div class="mb-3 form-check">
+                        <label class="d-block"> Type de structure : </label>
+                        <div class="row">
+                            <div class="col-lg-2 col-md-4 col-sm-6">
+                                <input type="checkbox" class="form-check-input" id="association" formControlName="association">
+                                <label class="form-check-label" for="association">Association</label>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <input type="checkbox" class="form-check-input" id="collectivite" formControlName="collectivite">
+                                <label class="form-check-label" for="collectivite">Collectivité territoriale (dont EPCI)</label>
+                            </div>
+                            <div class="col-lg-3 col-md-4 col-sm-6">
+                                <input type="checkbox" class="form-check-input" id="etablissement" formControlName="etablissement">
+                                <label class="form-check-label" for="etablissement">Etablissement public</label>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6">
+                                <input type="checkbox" class="form-check-input" id="etat" formControlName="etat">
+                                <label class="form-check-label" for="etat">Etat</label>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-6">
+                                <input type="checkbox" class="form-check-input" id="entreprise" formControlName="entreprise">
+                                <label class="form-check-label" for="entreprise">Entreprise</label>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">SIREN</label>
+                            <input type="text" class="form-control" formControlName="siren">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Raison sociale</label>
+                            <input type="text" class="form-control" formControlName="name" >
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Année de reporting</label>
+                            <input type="text" class="form-control" formControlName="anneeReporting">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Secteur d'activité</label>
+                            <input type="text" class="form-control" formControlName="secteur">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Région siège</label>
+                            <input type="text" class="form-control" formControlName="region">
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Soumise à la DPEF ?</label>
+                            <input type="text" class="form-control" formControlName="soumise">
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <label class="form-label">Réalise un PCAET ?</label>
+                            <input type="text" class="form-control" formControlName="realise">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Rechercher</button>
+            </form>
+            <div class="result-message">
+                Search results  {{ pageIndex * pageSize + 1 }} to {{ (pageIndex + 1) * pageSize }} of {{ length }}
+            </div>
+            <mat-paginator [length]="length" [pageSize]="pageSize" [pageIndex]="pageIndex"
+            (page)="onPageChange($event)"></mat-paginator>
+            <div class="row  " >
+                <div class="col-lg-3 col-md-4 col-sm-6"  *ngFor="let process of filteredProcesses">
+                    <div class="card">
+                        <img src="{{process.logo}}" class="card-img-top" alt="Logo" style="width:250px;height: 250px;">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ process.name }}</h5>
+                            <div class="info-list">
+                                <div class="info-item">
+                                    <span class="info-label">Année de reporting:</span>
+                                    <span class="info-value">{{ process.refYear }}</span>
+                                </div>
+                                <div class="info-item">
+                                    <span class="info-label">Date de publication:</span>
+                                    <span class="info-value">{{ process.creationDate | date: 'dd/MM/yyyy' }}</span>
+                                </div>
+                            </div>
+                            <button class="btn btn-primary" (click)="consulter(process.id)">Consulter</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+    <!-- Footer Start -->
+    <app-footer></app-footer>
+    <!-- Footer End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/lib/wow/wow.min.js"></script>
+    <script src="/assets/lib/easing/easing.min.js"></script>
+    <script src="/assets/lib/waypoints/waypoints.min.js"></script>
+    <script src="/assets/lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="/assets/lib/tempusdominus/js/moment.min.js"></script>
+    <script src="/assets/lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="/assets/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="/assets/js/main.js"></script>
+</body>
+
+</html>
